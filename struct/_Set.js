@@ -53,9 +53,14 @@ _Set.prototype.clear = function() {
 _Set.prototype.size = function() {
   return this.nativeKeys(this.items).length;
 };
+/**
+ * 判断集合是否为空
+ * @returns {boolean} 如果为空 true,否则 false
+ */
 _Set.prototype.isEmpty = function() {
   return this.size() === 0;
-}
+};
+
 
 var t  = new _Set();
 t.add('a');

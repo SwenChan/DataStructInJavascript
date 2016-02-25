@@ -3,6 +3,7 @@
  */
 function Stack() {
   this.items = [];
+  this.length = 0;
 };
 
 Stack.prototype.description = 'this is stack parent';
@@ -11,8 +12,9 @@ Stack.prototype.description = 'this is stack parent';
  * 将元素放入栈　置于数组最后一位
  * @param {*} element
  */
-Stack.prototype.push = function(element) {
+Stack.prototype.push = function(element) { //array implement is different from node implement
   //console.log(this);
+  this.length++;
   this.items.push(element);
 };
 /**
@@ -20,6 +22,7 @@ Stack.prototype.push = function(element) {
  * @return {*} 返回被弹出的值
  */
 Stack.prototype.pop = function() {
+  this.length--;
   return this.items.pop();
 };
 /**
@@ -27,27 +30,31 @@ Stack.prototype.pop = function() {
  * @returns {*} 返回栈顶元素
  */
 Stack.prototype.peek = function() {
-  return this.items[this.items.length - 1];
+  //return this.items[this.items.length - 1];
+  return this.items[this.length - 1];
 };
 /**
  * 确定栈是否为空
  * @returns {boolean}
  */
 Stack.prototype.isEmpty = function() {
-  return this.items.length === 0;
+  //return this.items.length === 0;
+  return this.length === 0;
 };
 /**
  * 清空栈内所有内容
  */
 Stack.prototype.clear = function() {
   this.items = [];
+  this.length = 0
 };
 /**
  * 返回栈的大小
  * @returns {Number}
  */
 Stack.prototype.size = function() {
-  return this.items.length;
+  //return this.items.length;
+  return this.length;
 };
 /**
  * 打印出栈的内容
@@ -62,5 +69,10 @@ d.push('b');
 s.push(1);
 s.print();
 d.print();
-s.clear()
-s.print()
+s.clear();
+s.print();
+console.log(d.size());
+d.push()
+d.push()
+console.log(d.size())
+d.print()
