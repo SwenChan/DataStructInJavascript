@@ -49,14 +49,18 @@ Stack.prototype.clear = function() {
 Stack.prototype.size = function() {
   return this.items.length;
 };
-
+/**
+ * 打印出栈的内容
+ */
 Stack.prototype.print = function() {
   console.log(this.items.toString());
 };
 var s = new Stack();
-
+var d = new Stack();
 s.push('a');
-s.push('b');
+d.push('b');
+s.push(1);
 s.print();
-s.pop();
-s.print();
+d.print();
+s.clear()
+s.print()
